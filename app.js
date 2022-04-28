@@ -17,12 +17,12 @@ const article3 = {
     quantite: 3
 };
 
-const calculerTVA = (prixHT, tauxTVA) => {
+ export const calculerTVA = (prixHT, tauxTVA) => {
     return prixHT * tauxTVA / 100;
 };
 
 
-const calculPanier = () => {
+export const calculPanier = () => {
     let prixTotal = 0;
     const panier = [article1, article2, article3];
     panier.map(article => {
@@ -31,6 +31,7 @@ const calculPanier = () => {
         }
         prixTotal += (article.prixHT + calculerTVA(article.prixHT, article.tauxTVA)) * article.quantite;
     });
+    
     console.log(`Le prix total du panier est de ${prixTotal} €`);
    
 }
